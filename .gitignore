@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+web/node_modules/
+web/.vite/
+web/dist/
+
+# Env files
+*.env
+api/.env
+web/.env
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
