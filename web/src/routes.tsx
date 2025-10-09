@@ -8,6 +8,8 @@ import Dashboard from './views/Dashboard'
 import Admin from './views/Admin'
 import Projects from './views/Projects'
 import AddProject from './views/AddProject'
+import ProjectDetail from './views/ProjectDetail'
+import ProjectSimulate from './views/ProjectSimulate'
 import RiskHeatmap from './views/RiskHeatmap'
 import WhatIf from './views/WhatIf'
 import DependencyGraph from './views/DependencyGraph'
@@ -19,15 +21,17 @@ import Reports from './views/Reports'
 
 export const routes: RouteObject[] = [
   { path: '/', element: <Landing /> },
+  { path: 'login', element: <Login /> },
   {
     path: '/', element: <AppShell />, children: [
-      { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },
       { path: 'select-role', element: <SelectRole /> },
       { path: 'dashboard', element: <Dashboard /> },
       { path: 'admin', element: <Admin /> },
       { path: 'projects', element: <Projects /> },
       { path: 'add-project', element: <AddProject /> },
+      { path: 'projects/:id', element: <ProjectDetail /> },
+      { path: 'projects/:id/simulate', element: <ProjectSimulate /> },
       { path: 'risk-heatmap', element: <RiskHeatmap /> },
       { path: 'what-if', element: <WhatIf /> },
       { path: 'dependency-graph', element: <DependencyGraph /> },
