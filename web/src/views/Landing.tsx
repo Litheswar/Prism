@@ -4,15 +4,19 @@ export default function Landing(){
       {/* Header / Navigation */}
       <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="h-6 w-6 rounded bg-sky-500" aria-hidden />
+          <div className="flex items-center gap-4">
+            <img src="/logo.png" alt="PRISM" className="h-6 w-6" />
             <div className="flex flex-col leading-4">
               <span className="font-bold tracking-wide">PRISM</span>
               <span className="text-xs text-slate-500">POWERGRID Analytics</span>
             </div>
+            <div className="ml-4 flex items-center gap-2">
+              <button className="btn border border-slate-200 bg-white hover:bg-slate-50" onClick={() => window.history.back()} title="Back">←</button>
+              <button className="btn border border-slate-200 bg-white hover:bg-slate-50" onClick={() => window.history.forward()} title="Forward">→</button>
+            </div>
           </div>
           <div>
-            <a href="/login" className="btn-primary">Login / Register</a>
+            <a href="/login" className="btn btn-primary">Login / Register</a>
           </div>
         </div>
       </header>
@@ -28,7 +32,7 @@ export default function Landing(){
           <p className="mt-4 text-slate-700 text-lg">AI-powered foresight for India's infrastructure projects. Predict delays and cost overruns before they happen.</p>
           <div className="mt-8 flex gap-3">
             <a href="/login" className="btn-primary">Get Started →</a>
-            <a href="/select-role" className="rounded-lg border border-sky-200 text-sky-700 px-4 py-2 hover:bg-sky-50">Learn More</a>
+            <a href="https://www.powergrid.in/" target="_blank" rel="noopener noreferrer" className="rounded-lg border border-sky-200 text-sky-700 px-4 py-2 hover:bg-sky-50">Learn More</a>
           </div>
         </div>
 

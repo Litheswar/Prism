@@ -1,7 +1,8 @@
-import { Outlet, Link, useLocation } from 'react-router-dom'
+import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
 
 export function AppShell() {
   const loc = useLocation()
+  const navigate = useNavigate()
   const nav = [
     { to: '/dashboard', label: 'Dashboard' },
     { to: '/projects', label: 'My Projects' },
@@ -19,13 +20,17 @@ export function AppShell() {
     <div className="min-h-screen bg-slate-50 text-slate-800">
       <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="h-6 w-6 rounded bg-accent-cyan" />
+          <div className="flex items-center gap-4">
+            <img src="/logo.png" alt="PRISM" className="h-6 w-6" />
             <span className="font-semibold">PRISM</span>
             <span className="text-slate-500 text-sm">POWERGRID Analytics</span>
+            <div className="ml-4 flex items-center gap-2">
+              <button className="btn border border-slate-200 bg-white hover:bg-slate-50" onClick={() => navigate(-1)} title="Back">←</button>
+              <button className="btn border border-slate-200 bg-white hover:bg-slate-50" onClick={() => navigate(1)} title="Forward">→</button>
+            </div>
           </div>
           <div className="flex items-center gap-2">
-            <Link className="btn-primary" to="/login">Login</Link>
+            <Link className="btn btn-primary" to="/login">Login</Link>
           </div>
         </div>
       </header>
